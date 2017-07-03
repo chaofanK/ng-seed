@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class XAppPage {
+export class NgSeedPage {
   navigateTo() {
     return browser.get('/');
   }

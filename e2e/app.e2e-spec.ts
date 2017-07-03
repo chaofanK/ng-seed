@@ -1,10 +1,10 @@
-import { XAppPage } from './app.po';
+import { NgSeedPage } from './app.po';
 
-describe('x-app App', () => {
-  let page: XAppPage;
+describe('ng-seed App', () => {
+  let page: NgSeedPage;
 
   beforeEach(() => {
-    page = new XAppPage();
+    page = new NgSeedPage();
   });
 
   it('should display welcome message', () => {
