@@ -10,12 +10,20 @@
             <md-icon>info</md-icon>
         </button>
       </md-list-item>
-      <md-list-item>
+      <md-list-item (click)="collspan = !collspan">
         <a md-line href="#">Google</a>
         <button md-icon-button>
             <md-icon>info</md-icon>
         </button>
       </md-list-item>
+      <md-nav-list class="sub-menu-list" [ngClass]="{'hide': collspan}">
+        <md-list-item>
+          <a md-line>Picture</a>
+        </md-list-item>
+        <md-list-item>
+          <a md-line>Map</a>
+        </md-list-item>
+      </md-nav-list>
     </md-nav-list>
   </md-sidenav>
   <div class="main-content">
