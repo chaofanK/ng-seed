@@ -1,6 +1,9 @@
 .hide {
   display: none;
 }
-.active-menu {
+.active-menu, .active-menu:hover {
   background: pink;
+}
+.sub-menu-list {
+  padding-top: 0;
 }

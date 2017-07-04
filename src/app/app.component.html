@@ -5,9 +5,11 @@
   <md-sidenav class="side-nav-bar" mode="side" opened="true">
     <md-nav-list>
       <a md-list-item routerLink="dashboard" routerLinkActive="active-menu">
+        <md-icon md-list-icon>folder</md-icon>
         <span md-line>Baidu</span>
       </a>
       <md-list-item (click)="collspan = !collspan">
+        <md-icon md-list-icon>folder</md-icon>
         <span md-line>Google</span>
         <button md-icon-button>
             <md-icon>info</md-icon>
@@ -15,6 +17,7 @@
       </md-list-item>
       <md-nav-list class="sub-menu-list" [ngClass]="{'hide': collspan}">
         <a md-list-item routerLink="dummy" routerLinkActive="active-menu">
+          <md-icon md-list-icon>link</md-icon>
           <span md-line>Picture</span>
         </a>
       </md-nav-list>
