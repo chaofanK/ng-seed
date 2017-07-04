@@ -4,12 +4,9 @@
 <md-sidenav-container>
   <md-sidenav class="side-nav-bar" mode="side" opened="true">
     <md-nav-list>
-      <md-list-item>
-        <a md-line href="#">Baidu</a>
-        <button md-icon-button>
-            <md-icon>info</md-icon>
-        </button>
-      </md-list-item>
+      <a md-list-item routerLink="dashboard" routerLinkActive="active-menu">
+        <span md-line>Baidu</span>
+      </a>
       <md-list-item (click)="collspan = !collspan">
         <a md-line href="#">Google</a>
         <button md-icon-button>
@@ -17,18 +14,17 @@
         </button>
       </md-list-item>
       <md-nav-list class="sub-menu-list" [ngClass]="{'hide': collspan}">
-        <md-list-item>
-          <a md-line>Picture</a>
-        </md-list-item>
-        <md-list-item>
-          <a md-line>Map</a>
-        </md-list-item>
+        <a md-list-item routerLink="dummy" routerLinkActive="active-menu">
+          <span md-line>Picture</span>
+        </a>
       </md-nav-list>
     </md-nav-list>
   </md-sidenav>
   <div class="main-content">
     <div class="main-container"style="height:3000px;">
-      <div>Hello</div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </md-sidenav-container>
