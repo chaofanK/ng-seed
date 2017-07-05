@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Dashboard",
+    "link": "/dashboard",
+    "icon": "home",
+    "hasSubMenu": false
+  },
+  {
+    "name": "Dummy",
+    "link": "/dummy",
+    "icon": "link",
+    "hasSubMenu": false
+  },
+  {
+    "name": "Search Engines",
+    "icon": "search",
+    "hasSubMenu": true,
+    "subMenus": [
+      {"name": "Google", "link": "/dummy"},
+      {"name": "Bing", "link": "/dummy"},
+      {"name": "Baidu", "link": "/dummy"}
+    ]
+  },
+  {
+    "name": "Email Providers",
+    "icon": "email",
+    "hasSubMenu": true,
+    "subMenus": [
+      {"name": "Gmail", "link": "/dummy"},
+      {"name": "Outlook", "link": "/dummy"},
+      {"name": "Netease", "link": "/dummy"}
+    ]
+  }
+]

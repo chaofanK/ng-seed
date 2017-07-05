@@ -4,23 +4,27 @@
 <md-sidenav-container>
   <md-sidenav class="side-nav-bar" mode="side" opened="true">
     <md-nav-list>
-      <a md-list-item routerLink="dashboard" routerLinkActive="active-menu">
-        <md-icon md-list-icon>folder</md-icon>
-        <span md-line>Baidu</span>
-      </a>
-      <md-list-item (click)="collspan = !collspan">
-        <md-icon md-list-icon>folder</md-icon>
-        <span md-line>Google</span>
-        <button md-icon-button>
-            <md-icon>info</md-icon>
-        </button>
-      </md-list-item>
-      <md-nav-list class="sub-menu-list" [ngClass]="{'hide': collspan}">
-        <a md-list-item routerLink="dummy" routerLinkActive="active-menu">
-          <md-icon md-list-icon>link</md-icon>
-          <span md-line>Picture</span>
+      <div *ngFor="let menu of menus">
+        <a *ngIf="!menu.hasSubMenu" md-list-item routerLink="{{menu.link}}" routerLinkActive="active-menu">
+          <md-icon md-list-icon>{{menu.icon}}</md-icon>
+          <span md-line>{{menu.name}}</span>
         </a>
-      </md-nav-list>
+        <!-- has sub-menus -->
+        <a *ngIf="menu.hasSubMenu" md-list-item (click)="menu.collapsed = menu.collapsed === undefined ? true : menu.collapsed; menu.collapsed = !menu.collapsed">
+          <md-icon md-list-icon>{{menu.icon}}</md-icon>
+          <span md-line>{{menu.name}}</span>
+          <button md-icon-button>
+            <md-icon *ngIf="menu.collapsed">expand_more</md-icon>
+            <md-icon *ngIf="!menu.collapsed">expand_less</md-icon>
+          </button>
+        </a>
+        <md-nav-list *ngIf="menu.hasSubMenu" class="sub-menu-list" [ngClass]="{'hide': menu.collapsed === undefined ? true : menu.collapsed}">
+          <a md-list-item *ngFor="let subMenu of menu.subMenus" routerLink="{{subMenu.link}}" routerLinkActive="active-menu">
+            <md-icon md-list-icon>link</md-icon>
+            <span md-line>{{subMenu.name}}</span>
+          </a>
+        </md-nav-list>
+      </div>
     </md-nav-list>
   </md-sidenav>
   <div class="main-content">
